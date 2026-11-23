@@ -30,10 +30,11 @@ export const manifest = setupManifest({
       arch: ['x86_64', 'aarch64'],
     },
     // Search index. Pinned to the version upstream's own docker-compose.yml
-    // ships (docker/docker-compose.yml). Confirmed on Docker Hub 2026-11-15:
-    // amd64 + arm64.
+    // ships (docker/docker-compose.yml), or a newer patch release carrying a
+    // security fix. Never lower it: Meilisearch cannot open a newer index.
+    // Confirmed on Docker Hub 2026-11-23: amd64 + arm64.
     meilisearch: {
-      source: { dockerTag: 'getmeili/meilisearch:v1.55.0' },
+      source: { dockerTag: 'getmeili/meilisearch:v1.55.1' },
       arch: ['x86_64', 'aarch64'],
     },
   },

@@ -16,6 +16,9 @@ Upstream is tracked as three independently pinned prebuilt Docker images in
   whatever version upstream's own `docker/docker-compose.yml` ships. Bump it
   in lockstep with that file, not independently — a mismatched Meilisearch
   version is the most common cause of a broken search index after an update.
+  The one exception: the pin may sit ahead of upstream's on a patch release
+  shipped for a security fix. Never move it below the current pin; Meilisearch
+  cannot open an index a newer version wrote.
   `MEILI_UPGRADE_DB=true` in `startos/main.ts` stays set on purpose: it is
   what lets a new pin open the old index (it migrates it in place), and it
   does nothing when the version is unchanged. Don't remove it.
