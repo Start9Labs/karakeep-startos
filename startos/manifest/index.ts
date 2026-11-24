@@ -22,10 +22,10 @@ export const manifest = setupManifest({
     },
     // Headless Chrome used by the crawler for screenshots/archival. Tagged by
     // its bundled Chrome version, not the karakeep app version. Confirmed on
-    // ghcr.io 2026-11-15: amd64 + arm64.
+    // ghcr.io 2026-11-24: amd64 + arm64.
     chrome: {
       source: {
-        dockerTag: 'ghcr.io/karakeep-app/karakeep-chrome:157.0.8103.38-r1',
+        dockerTag: 'ghcr.io/karakeep-app/karakeep-chrome:158.0.8127.88-r1',
       },
       arch: ['x86_64', 'aarch64'],
     },
