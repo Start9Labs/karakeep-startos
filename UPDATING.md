@@ -11,7 +11,10 @@ Upstream is tracked as three independently pinned prebuilt Docker images in
   tag of upstream's `docker/chrome/Dockerfile` `GOOGLE_CHROME_VERSION` at the
   matching Karakeep git tag (published as `<version>-r<n>`; take the highest
   `-r`). Upstream's compose file uses the floating `release` tag, so it does
-  not move with Karakeep releases — check the Dockerfile.
+  not move with Karakeep releases — check the Dockerfile. The version in the
+  image tag identifies Google Chrome on x86_64 only; arm64 installs Debian
+  trixie's Chromium independently. Before claiming a browser security fix for
+  arm64, verify its installed Chromium version in the upstream publish logs.
 - `images.meilisearch.source.dockerTag` — `getmeili/meilisearch`, pinned to
   whatever version upstream's own `docker/docker-compose.yml` ships. Bump it
   in lockstep with that file, not independently — a mismatched Meilisearch
